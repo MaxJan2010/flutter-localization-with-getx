@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 import 'binding/export_binding.dart';
-import 'controllers/export_controllers.dart';
+// import 'controllers/export_controllers.dart';
 import 'data/languages/export_languages.dart';
 import 'local_storage/export_local_storage.dart';
 import 'screens/export_screens.dart';
@@ -25,26 +25,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<LocalizationController>(
-      init: LocalizationController(),
-      builder: (controller) => GetMaterialApp(
-        title: "Localization With Getx",
-        debugShowCheckedModeBanner: false,
-        initialBinding: LocalizationBinding(),
-        translations: Translation(),
-        locale: controller.appLocale,
-        fallbackLocale: controller.appLocale,
-        localizationsDelegates: const [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('ar'),
-          Locale('en'),
-        ],
-        home: const HomeScreen(),
-      ),
+    return GetMaterialApp(
+      title: "Localization With Getx",
+      debugShowCheckedModeBanner: false,
+      initialBinding: LocalizationBinding(),
+      translations: Translation(),
+      locale: const Locale('en', 'US'),
+      // fallbackLocale: controller.appLocale,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('ar'),
+        Locale('en'),
+      ],
+      home: const HomeScreen(),
     );
   }
 }

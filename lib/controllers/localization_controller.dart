@@ -11,6 +11,7 @@ class LocalizationController extends GetxController {
   void onInit() async {
     super.onInit();
     final cachedLanguageCode = AppLocalizationLocalStorage.getCachedLanguage();
+    groupValue = cachedLanguageCode;
     appLocale = Locale(cachedLanguageCode);
     Get.updateLocale(appLocale);
   }

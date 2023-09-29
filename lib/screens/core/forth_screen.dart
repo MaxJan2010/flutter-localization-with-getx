@@ -12,36 +12,13 @@ class ForthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('home'.tr),
-        // actions: [
-        //   GetBuilder<AppLanguage>(
-        //   init: AppLanguage(),
-        //     builder: (controller) {
-        //       return Row(
-        //         mainAxisSize: MainAxisSize.min,
-        //         children: [
-        //           const Text(
-        //             "EN",
-        //           ),
-        //           Switch(
-        //             activeColor: Colors.amber,
-        //             value: controller.appLocale.languageCode == "ar",
-        //             onChanged: (value) {
-        //               if (value) {
-        //                 controller.changeLanguage("ar");
-        //               } else {
-        //                 controller.changeLanguage("en");
-        //               }
-        //             },
-        //           ),
-        //           const Text(
-        //             "AR",
-        //           ),
-        //         ],
-        //       );
-        //     },
-        //   ),
-        // ],
+        title: GetBuilder<LocalizationController>(
+          init: LocalizationController(),
+          builder: (controller) {
+            return Text('home'.tr);
+          },
+        )
+
       ),
       body:
       GetBuilder<LocalizationController>(
