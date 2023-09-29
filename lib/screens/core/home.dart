@@ -19,57 +19,20 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              ElevatedButton(
+                  child: Text("Select_Language".tr),
+                  onPressed: () {
+                    Get.to(() => const MySelectLanguageScreen());
+                  }),
               GetBuilder<LocalizationController>(
                 builder: (myLocalizationController) {
-                  return SizedBox(
-                    width: double.infinity,
-                    child: Column(
-                      children: [
-                        ElevatedButton(
-                            child: const Text("Navigate to next screen"),
-                            onPressed: () {
-                              Get.to(() => const SelectLanguageScreen());
-                            }),
-                        ElevatedButton(
-                            child: const Text("Navigate to forth screen"),
-                            onPressed: () {
-                              Get.to(() => const ForthScreen());
-                            }),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Text(
-                              "EN",
-                            ),
-                            Switch(
-                              activeColor: Colors.amber,
-                              value: myLocalizationController
-                                      .appLocale.languageCode ==
-                                  "ar",
-                              onChanged: (value) {
-                                if (value) {
-                                  myLocalizationController.changeLanguage("ar");
-                                } else {
-                                  myLocalizationController.changeLanguage("en");
-                                }
-                              },
-                            ),
-                            const Text(
-                              "AR",
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  );
+                  return ElevatedButton(
+                      child: Text("Select_Language".tr),
+                      onPressed: () {
+                        Get.to(() => const MySelectLanguageScreen());
+                      });
                 },
               ),
-              Text(
-                "name".tr,
-                textScaleFactor: 3,
-              ),
-
-              // RadioForm(),
             ],
           ),
         ));

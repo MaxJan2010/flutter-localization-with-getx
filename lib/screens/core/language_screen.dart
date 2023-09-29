@@ -5,8 +5,8 @@ import '../../controllers/export_controllers.dart';
 import '../../widgets/export_widgets.dart';
 
 
-class ForthScreen extends StatelessWidget {
-  const ForthScreen({super.key});
+class MySelectLanguageScreen extends StatelessWidget {
+  const MySelectLanguageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,8 @@ class ForthScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const CustomRadioButton(value: "en", title: 'english',),
-                const CustomRadioButton(value: "ar", title: 'arabic',),
+                CustomRadioButton(value: "en", title: 'Language_English'.tr,),
+                CustomRadioButton(value: "ar", title: 'Language_Arabic'.tr,),
                 Text(
                   "name".tr,
                   textScaleFactor: 3,
