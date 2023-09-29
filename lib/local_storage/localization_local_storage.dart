@@ -2,17 +2,17 @@
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SharedPrefHelper {
-  static late SharedPreferences prefs;
+class AppLocalizationLocalStorage {
+  static late SharedPreferences transLocalStorageBox ;
 
   static Future<void> init() async {
-    prefs = await SharedPreferences.getInstance();
+    transLocalStorageBox  = await SharedPreferences.getInstance();
   }
 
   static const String _langCodeKey = "lang_code";
 
   static String getCachedLanguage() {
-    final code = prefs.getString(_langCodeKey);
+    final code = transLocalStorageBox .getString(_langCodeKey);
     if (code != null) {
       return code;
     } else {
@@ -22,6 +22,6 @@ class SharedPrefHelper {
   }
 
   static Future<void> cacheLanguage(String code) async {
-    await prefs.setString(_langCodeKey, code);
+    await transLocalStorageBox .setString(_langCodeKey, code);
   }
 }

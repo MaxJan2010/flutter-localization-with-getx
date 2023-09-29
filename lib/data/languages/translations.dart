@@ -1,8 +1,6 @@
-// ignore_for_file: always_use_package_imports
-
 import 'package:get/get.dart';
-import 'utils/langs/ar.dart';
-import 'utils/langs/en.dart';
+
+import 'export_languages.dart';
 
 class Translation extends Translations {
   @override
